@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cals.css">
+</head>
+<body>
+   <div class="container">
+    <div class="calculator">
+        <input type="text" placeholder="0"  class="output-screen" id="pla" value="">
+        <button onclick="cler()">c</button>
+        <button onclick="del()">del</button>
+        <button onclick="display('%')">%</button>
+        <button onclick="display('/')">/</button>
+        <button onclick="display('7')">7</button>
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button onclick="display('*')">*</button>
+        <button onclick="display('4')">4</button>
+        <button onclick="display('5')">5</button>
+        <button onclick="display('6')">6</button>
+        <button onclick="display('-')">-</button>
+        <button onclick="display('1')">1</button>
+        <button onclick="display('2')">2</button>
+        <button onclick="display('3')">3</button>
+        <button onclick="display('+')">+</button>
+        <button onclick="display('.')">.</button>
+        <button onclick="display('0')">0</button>
+        <button onclick="calculate()" id="kk">=</button>
+    </div>
+   </div> 
+  <script src="cals.js">
+    let outputscreen=document.querySelector(".output-screen");
+function display(num){
+    outputscreen.value+=num; 
+    
+}
+// var validate=document.querySelector("#kk");
+// validate.addEventListener("click",jj)
+// function jj()
+// {
+// try{
+//     outputscreen.value=eval(outputscreen.value)
+// }
+// catch(err)
+// {
+//     alert("NOT USE SPECIAL KEY SAME TIME");
+// }
+// }
+
+function calculate()
+{
+try{
+    outputscreen.value=eval(outputscreen.value)
+}
+catch(err)
+{
+    alert(err.message+"NOT USE SPECIAL KEY SAME TIME");
+}
+}
+function cler()
+{
+    outputscreen.value="";
+}
+
+function del()
+{
+    outputscreen.value=outputscreen.value.slice(0,-1);
+}
+  </script>
+</body>
+</html>
